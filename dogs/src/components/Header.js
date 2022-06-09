@@ -18,7 +18,7 @@ export const Header = () => {
           </Link>
         ) : (
           <Link className={styles.login} to="/login">
-            Login | Criar Conta
+            Login | Create Account
           </Link>
         )}
       </nav>
