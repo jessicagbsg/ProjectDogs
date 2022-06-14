@@ -33,7 +33,7 @@ const LoginCreate = () => {
         <Input label="Email" type="email" name="email" {...email} />
         <Input label="Password" type="password" name="password" {...password} />
         {loading ? (
-          <Button disabled>Loading</Button>
+          <Button disabled>Loading...</Button>
         ) : (
           <Button>Register</Button>
         )}

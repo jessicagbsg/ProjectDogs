@@ -9,9 +9,9 @@ import { PHOTO_POST } from "../../api";
 import { useNavigate } from "react-router-dom";
 
 const UserPhotoPost = () => {
-  const name = useForm();
-  const weight = useForm("number");
-  const age = useForm("number");
+  const nome = useForm();
+  const peso = useForm("number");
+  const idade = useForm("number");
   const [img, setImg] = React.useState({});
   const { data, error, loading, request } = useFetch();
   const navigate = useNavigate();
@@ -24,9 +24,9 @@ const UserPhotoPost = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("img", img.raw);
-    formData.append("name", name.value);
-    formData.append("weight", weight.value);
-    formData.append("age", age.value);
+    formData.append("nome", nome.value);
+    formData.append("peso", peso.value);
+    formData.append("idade", idade.value);
 
     const token = window.localStorage.getItem("token");
     const { url, options } = PHOTO_POST(formData, token);
@@ -42,9 +42,9 @@ const UserPhotoPost = () => {
   return (
     <section className={`${styles.photoPost} animationLeft`}>
       <form onSubmit={handleSubmit}>
-        <Input label="Name" type="text" name="name" {...name} />
-        <Input label="Weight" type="number" name="weight" {...weight} />
-        <Input label="Age" type="number" name="age" {...age} />
+        <Input label="Name" type="text" name="name" {...nome} />
+        <Input label="Weight" type="number" name="weight" {...peso} />
+        <Input label="Age" type="number" name="age" {...idade} />
         <input
           className={styles.file}
           type="file"
