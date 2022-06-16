@@ -9,26 +9,32 @@ import User from "./components/User/User";
 import { UserStorage } from "./UserContext";
 import ProtectedRoute from "./components/Helper/ProtectedRoute";
 import Photo from "./components/Photo/Photo";
+import UserProfile from "./components/User/UserProfile";
+import NotFound from "./components/Helper/NotFound";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="login/*" element={<Login />}></Route>
-            <Route
-              path="account/*"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            ></Route>
-            <Route path="foto/:id" element={<Photo />}></Route>
-          </Routes>
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="login/*" element={<Login />}></Route>
+              <Route
+                path="account/*"
+                element={
+                  <ProtectedRoute>
+                    <User />
+                  </ProtectedRoute>
+                }
+              ></Route>
+              <Route path="foto/:id" element={<Photo />}></Route>
+              <Route path="perfil/:user" element={<UserProfile />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
+            </Routes>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>
