@@ -4,9 +4,7 @@ Project of a social media for dogs developed using ReactJS
 
 # Project Layout
 
-
-
-
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/98706386/177904273-c207ec07-e1e9-45d2-8b9e-8a450673fc74.gif)
 
 ## About the project
 
